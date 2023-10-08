@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=Doppio+One&family=Roboto:wght@300;400&display=swap');
+
+.product-list {
+  padding: 16px 32px;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.product-list--wrapper {
+  display: flex;
+  padding-left: 40px;
+  flex-wrap: wrap;
+}
+
+.item-card {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: inherit;
+  padding: 0;
+  width: 16.66%;
+  margin: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.item-card__information {
+  padding: 6px 12px;
+  margin-top: 12px;
+}
+
+.item-card__information .title {
+  text-overflow: ellipsis;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.8);
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+
+.item-card__information .title h3 {
+  margin: 8px 0 14px;
+}
+
+.pricing small {
+  opacity: 0.5;
+  font-weight: 400;
+  margin-left: 8px;
+}
+
+.pricing span {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+button.cart-add {
+  margin-top: auto;
+  cursor: pointer;
+  width: 100%;
+  background-color: #0073e6;
+  border-radius: 0px 0px 4px 4px;
+  border: unset;
+  font-size: 14px;
+  padding: 8px 16px;
+  color: white;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+header {
+  margin: 0;
+  padding: 0 0px;
+  background-color: #0073e6;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 15px 10px -15px rgba(17, 17, 17, 0.168627451);
+  position: sticky;
+  z-index: 1024;
+  top: 0;
+}
+
+.nav-brand a,
+.nav-brand button,
+.cart-container a,
+.cart-container button {
+  display: flex;
+  align-items: center;
+  padding: 12px 32px;
+  text-decoration: none;
+  color: white;
+  font-size: 28px;
+}
+
+.nav-brand a svg,
+.nav-brand button svg,
+.cart-container a svg,
+.cart-container button svg {
+  margin-left: 8px;
+  font-size: 30px;
+}
+
+.nav-brand:hover,
+.cart-container:hover {
+  background-color: rgba(28, 34, 36, 0.5);
+}
+
+.cart-container {
+  display: flex;
+}
+
+.cart-container a,
+.cart-container button {
+  margin: auto;
+  background-color: unset;
+  border: unset;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.cart-container a span:first-child,
+.cart-container button span:first-child {
+  padding-right: 8px;
+}
+
+.cart-container a span:first-child[data-items]::after,
+.cart-container button span:first-child[data-items]::after {
+  position: relative;
+  content: attr(data-items);
+  font-size: 12px;
+  background-color: red;
+  padding: 2px 4px;
+  border-radius: 50%;
+  top: -8px;
+  right: -4px;
+}
+
+.searchBox-container {
+  align-self: center;
+  flex-grow: 1;
+}
+
+.searchBox-container form {
+  position: relative;
+  display: flex;
+  max-width: 100%;
+  margin: 0 80px;
+  justify-content: center;
+}
+
+.searchBox-container form input {
+  flex-grow: 1;
+  padding: 8px 56px 8px 16px;
+  border: transparent;
+  border-radius: 2px;
+  width: 100%;
+  font-size: 15px;
+  color: rgba(128, 128, 128, 0.897);
+  outline: rgba(28, 34, 36, 0.5);
+  max-width: 500px;
+}
+
+.searchBox-container form button[type=submit] {
+  /* background-color: #f2f2f2; */
+  position: relative;
+  right: 36px;
+  padding-right: 8px !important;
+  padding-left: 8px !important;
+  border: unset;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  cursor: pointer;
+}
+
+.searchBox-container form+svg {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+
+  .nav-brand a,
+  .nav-brand button,
+  .cart-container a,
+  .cart-container button {
+    font-size: 22px;
+    padding: 14px 16px;
+  }
+
+  .cart-container a,
+  .cart-container button {
+    font-size: 16px;
+  }
+
+  .searchBox-container form {
+    margin: 0 0px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+
+  .cart-container a span:first-child,
+  .cart-container button span:first-child {
+    display: none;
+  }
+
+  .searchBox-container form {
+    display: none;
+  }
+
+  .searchBox-container form+svg {
+    margin-left: auto;
+    display: block;
+  }
+}
+
+.subheader-container {
+  position: sticky;
+  z-index: 1024;
+  top: 66px;
+}
+
+.subheader-container ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  background-color: white;
+  box-shadow: 0 15px 10px -15px rgba(17, 17, 17, 0.168627451);
+  padding: 0 32px;
+  overflow-x: auto;
+}
+
+.subheader-container ul li a {
+  display: inline-block;
+  padding: 10px 16px;
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+  transition: background 100ms ease-in-out;
+  white-space: nowrap;
+}
+
+.subheader-container ul li a.active,
+.subheader-container ul li a:hover {
+  background-color: white;
+  color: #0073e6;
+}
+
+@media screen and (max-width: 768px) {
+  .subheader-container ul {
+    padding: 0 16px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Doppio One", sans-serif;
+}
+
+body {
+  line-height: 1.5;
+  margin: 0;
+  position: relative;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.words {
+  color: #ffffff;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  padding: 10px;
+  margin-top: 24px;
+  text-align: center;
+  border-width: 2px;
+  border-color: #F1F3F6;
+}
+
+.contact {
+  display: grid;
+  height: 115vh;
+  background-color: #172337;
+  grid-template-columns: 171.233px 171.233px 171.233px 171.233px 283.067px 232px;
+  justify-content: center;
+  /* align-content: center; */
+  margin-top: 10px;
+}
+
+.block1 {
+  font-size: 12px;
+  color: white;
+  font-family: "Roboto", Arial, sans-serif;
+}
+
+.block2 {
+  /* border-left: 1px solid  #878787 ; */
+  font-size: 12px;
+  color: white;
+  font-family: "Roboto", Arial, sans-serif;
+}
+
+.Contact-subsection {
+  color: #878787;
+  font-size: 12px;
+  font-family: "Roboto", Arial, sans-serif;
+
+}
+
+.cart-addon {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-addon__modal {
+  margin-top: 8px;
+}
+
+.cart-addon button {
+  cursor: pointer;
+  background-color: #0073e6;
+  border-radius: 4px;
+  border: unset;
+  font-size: 14px;
+  padding: 8px 12px;
+  color: white;
+}
+
+.cart-addon span.counter {
+  font-weight: lighter;
+  padding: 0 16px;
+}
+
+/*# sourceMappingURL=index.css.map */
